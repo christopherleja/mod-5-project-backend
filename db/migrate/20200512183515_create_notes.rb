@@ -3,9 +3,9 @@ class CreateNotes < ActiveRecord::Migration[6.0]
     create_table :notes do |t|
       t.integer "track_id"
       t.integer "song_id"
-      t.integer "played_at"
-      t.integer "ended_at"
-      t.string "name"
+      t.float "time"
+      t.float "duration"
+      t.integer "midiNumber"
     end
   end
 end

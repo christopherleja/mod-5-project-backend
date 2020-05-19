@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2020_05_12_183515) do
   create_table "notes", force: :cascade do |t|
     t.integer "track_id"
     t.integer "song_id"
-    t.integer "played_at"
-    t.integer "ended_at"
-    t.string "name"
+    t.float "time"
+    t.float "duration"
+    t.integer "midiNumber"
   end
 
   create_table "songs", force: :cascade do |t|
@@ -31,8 +31,7 @@ ActiveRecord::Schema.define(version: 2020_05_12_183515) do
   create_table "tracks", force: :cascade do |t|
     t.integer "song_id"
     t.integer "user_id"
-    t.integer "instrument_id"
-    t.integer "octave"
+    t.string "instrument"
   end
 
   create_table "users", force: :cascade do |t|

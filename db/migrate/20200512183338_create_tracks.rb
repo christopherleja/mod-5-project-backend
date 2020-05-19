@@ -3,8 +3,7 @@ class CreateTracks < ActiveRecord::Migration[6.0]
     create_table :tracks do |t|
       t.integer "song_id"
       t.integer "user_id"
-      t.integer "instrument_id"
-      t.integer "octave"
+      t.string "instrument"
     end
   end
 end
