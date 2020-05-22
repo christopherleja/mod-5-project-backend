@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 resources :users
 resources :songs
 
+post "/signup", to: "users#create"
+post "/login", to: "auth#login"
+post "/logout", to: "auth#logout"
+get "/autologin", to: "auth#autologin"
+
+
 resources :users do
   resources :songs
 end
