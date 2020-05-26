@@ -1,4 +1,6 @@
 class AuthController < ApplicationController
+  before_action :authenticated, only: [:autologin]
+
 
   def login
     user = User.find_by(username: params[:username])
@@ -11,9 +13,7 @@ class AuthController < ApplicationController
   end
 
   def autologin
-    user = User.find_by(id: session[:user_id])
-
-    render json: user
+    render json: @current_user
   end
 
   def logout

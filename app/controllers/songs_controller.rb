@@ -15,18 +15,19 @@ class SongsController < ApplicationController
 
     def create
         song = Song.create(title: params[:title], user_id: @current_user.id)
-            
         track = Track.create(song_id: song.id, user_id: song.user_id, instrument: params[:instrument]) 
         params[:notes].each do |note| 
             time = note["time"]
             duration = note["duration"]
-            midiNumber = note["midiNumber"]
-            Note.create(track_id: track.id, song_id: song.id, time: time, duration: duration, midiNumber: midiNumber)
+            pitch = note["pitch"]
+            endTime = note["endTime"]
+            Note.create(track_id: track.id, song_id: song.id, time: time, duration: duration, pitch: pitch, endTime: endTime)
         end
         render json: song
     end
 
     def destroy
+        
         song = Song.find(params[:id])
         song.destroy
 
