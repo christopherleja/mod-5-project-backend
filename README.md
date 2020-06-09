@@ -1,24 +1,27 @@
-# README
+Maiestro is a music app designed to help users kickstart their creativity and avoid writer's block. Check out the demo here: https://maiestro.netlify.app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It generates a dynamic, customizable keyboard by using the react-piano library (available here: https://www.npmjs.com/package/react-piano).
+Users can record, save, and load melodies.
+Uses magenta.js (https://github.com/magenta/magenta-js) and machine learning to continue user's recorded melody upon pressing the duet button.
+Uses a session-based Rails API structure for authentication and authorization.
+Front end was built using React, back end with a Rails API. Front end code: https://github.com/christopherleja/maiestro
 
-Things you may want to cover:
+How to use:
 
-* Ruby version
+#clone backend first
+$ git clone git@github.com:christopherleja/maiestro-backend.git
 
-* System dependencies
+#cd into backend folder
+$ cd maiestro-backend
 
-* Configuration
+#install dependencies and start the server
+$ bundle && rails s
 
-* Database creation
+#clone this repository
+$ git clone git@github.com:christopherleja/maiestro.git 
 
-* Database initialization
+#cd into the repository
+$ cd maiestro
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#install dependencies and run the app
+$ npm install && npm start
