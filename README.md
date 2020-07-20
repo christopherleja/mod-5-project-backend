@@ -8,7 +8,7 @@ Front end was built using React, back end with a Rails API. Front end code: http
 
 How to use:
 
-#clone backend first
+```#clone backend first
 $ git clone git@github.com:christopherleja/maiestro-backend.git
 
 #cd into backend folder
@@ -25,3 +25,4 @@ $ cd maiestro
 
 #install dependencies and run the app
 $ npm install && npm start
+```
