@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-    before_action :authenticated
+    before_action :authorized
     
     def index
         songs = Song.all
