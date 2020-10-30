@@ -4,7 +4,8 @@ class SongsController < ApplicationController
     def index
         songs = Song.all
         
-        render json: songs
+        user_songs = songs.filter{|song| @current_user.id == song.user_id }
+        render json: user_songs
     end
 
     def show
